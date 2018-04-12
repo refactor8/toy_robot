@@ -11,7 +11,17 @@ RSpec.describe ToyRobot::CLI do
         [:place, 0, 0, "NORTH"],
         [:move],
         [:turn_right],
+        [:move],
         [:turn_left],
+        [:move],
+        [:move],
+        [:turn_left],
+        [:move],
+        [:turn_right],
+        [:turn_right],
+        [:move],
+        [:move],
+        [:move],
         [:report]
       ])
     end

@@ -8,13 +8,13 @@ module ToyRobot
         [:move]
       when /\ALEFT\Z/
         [:turn_left]
-       when /\ARIGHT\Z/
+      when /\ARIGHT\Z/
         [:turn_right]
-       when /\AREPORT\Z/
-        [:report]
-       else
+      when /\AREPORT\Z/
+       [:report]
+      else
         [:invalid, command]
-       end
-     end
+      end
+    end
   end
 end
