@@ -1,5 +1,6 @@
 module ToyRobot
   class CLI
+    attr_reader :simulator
 
     def initialize
       table = ToyRobot::Table.new(5,5)
@@ -14,7 +15,7 @@ module ToyRobot
 
     def run(commands)
       commands.each do |command, *args|
-        @simulator.send(command, *args)
+        simulator.send(command, *args)
       end
     end
   end
