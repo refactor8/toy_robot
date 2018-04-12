@@ -69,6 +69,10 @@ RSpec.describe ToyRobot::Robot do
       subject.turn_right
       expect(subject.direction).to eq ("WEST")
     end
+
+    it "next move is to (0,1)" do
+      expect(subject.next_move).to eq([0, -1])
+    end
   end
 
   context "when facing east" do
@@ -87,6 +91,10 @@ RSpec.describe ToyRobot::Robot do
     it "turns right to face south" do
       subject.turn_right
       expect(subject.direction).to eq("SOUTH")
+    end
+
+    it "next move is to (1, 0)" do
+      expect(subject.next_move).to eq([1, 0])
     end
   end
 
@@ -107,6 +115,10 @@ RSpec.describe ToyRobot::Robot do
       subject.turn_right
       expect(subject.direction).to eq("NORTH")
     end
+
+    it "next move is to (-1, 0)" do
+      expect(subject.next_move).to eq([-1, 0])
+    end
   end
 
   context "when facing north" do
@@ -120,6 +132,10 @@ RSpec.describe ToyRobot::Robot do
     it "turns left to face west" do
       subject.turn_left
       expect(subject.direction).to eq("WEST")
+    end
+
+    it "next move is to (0, 1)" do
+      expect(subject.next_move).to eq([0,1])
     end
   end
 
@@ -144,7 +160,7 @@ RSpec.describe ToyRobot::Robot do
       expect(subject.report).to eq({
         east: 5,
         north: 4,
-        direction: "EAST"  
+        direction: "EAST"
       })
     end
   end

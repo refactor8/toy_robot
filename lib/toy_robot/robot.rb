@@ -37,6 +37,19 @@ module ToyRobot
       @north -= 1
     end
 
+    def next_move
+      case @direction
+      when "NORTH"
+        [@east, @north + 1 ]
+      when "SOUTH"
+        [@east, @north - 1]
+      when "EAST"
+        [@east + 1, @north]
+      when "WEST"
+        [@east - 1, @north]
+      end
+    end
+
     def report
       {
         north: north,
@@ -49,7 +62,7 @@ module ToyRobot
 
     def turn(turn_direction)
       index = DIRECTIONS.index(@direction)
-      rotations = turn_direction == :right ? 1: -1
+      rotations = turn_direction == :right ? 1 : -1
       @direction = DIRECTIONS.rotate(rotations)[index]
     end
   end
